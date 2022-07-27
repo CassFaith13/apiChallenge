@@ -9,7 +9,7 @@ const searchDiv = document.getElementById('searchContainer')
 fetch(baseURL)
     .then(res => res.json())
     .then(data => {
-        console.log(data)
+        // console.log(data)
 
         data.forEach(film => { 
             makeFilmDiv(film.image, film.title, film.description, containerDiv)
@@ -26,7 +26,16 @@ fetch(`https://ghibliapi.herokuapp.com/films/?title=${searchInput.value}`)
         console.log(data)
         makeFilmDiv(data[0].image, data[0].title, data[0].description, searchDiv)
     })
-    .catch(console.log("Error: Do better"))
+    .catch(err => {
+        const errorMessage = document.createElement("h4")
+
+        errorMessage.textContent = `Error! Do Better!`
+        errorMessage.style = "background-color: white; color: red; font-size: 1.5rem;"
+
+        searchDiv.appendChild(errorMessage)
+
+        console.log(`Error: ${err}`)
+    })
 
     searchDiv.innerHTML = ""
     searchInput.value = ""
