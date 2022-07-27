@@ -30,7 +30,7 @@ fetch(`https://ghibliapi.herokuapp.com/films/?title=${searchInput.value}`)
         const errorMessage = document.createElement("h4")
 
         errorMessage.textContent = `Error! Film name search is case sensitive! Do better!`
-        errorMessage.style = "background-color: white; color: palevioletred; text-shadow: 1px 1px purple; font-size: 1.5rem; margin: auto; padding: 5px;"
+        errorMessage.style = "background-color: white; color: palevioletred; text-shadow: 1px 1px purple; font-size: 1.5rem; margin: auto; margin-top: 15px; padding: 5px;"
 
         searchDiv.appendChild(errorMessage)
 
