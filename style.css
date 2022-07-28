@@ -145,3 +145,7 @@ form {
     border-radius: 5px;
     text-align: center;
   }
+  
+  .filmCard:nth-child(n) h3 {
+    background-image: linear-gradient(120deg, #ff9a9e 0%, #fecfef 100%);
+  }
