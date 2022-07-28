@@ -62,6 +62,7 @@ h2 {
 
 p {
     font-family: 'Dosis', sans-serif;
+    text-align: center;
 }
 
 form {
@@ -97,6 +98,7 @@ form {
 .button:hover {
     background-color: darkblue; 
     color: white;
+    cursor: pointer;
 }
 
 .card {
@@ -115,6 +117,7 @@ form {
   .card:hover {
     box-shadow: 2px 8px 45px rgb(88, 2, 235);
     transform: translate3D(0, -2px, 0);
+    cursor: pointer;
   }
   
   .card:nth-child(n) h3 {
@@ -127,4 +130,18 @@ form {
   
   .card:nth-child(4n) h3 {
     background-image: linear-gradient(120deg, #ffc3a0 0%, #ffafbd 100%);
+  }
+
+  .filmCard {
+    margin: 1rem;
+    background: white;
+    box-shadow: 2px 4px 25px rgba(0, 0, 0, .1);
+    border-radius: 12px;
+    /* overflow: hidden; */
+    transition: all .2s linear;
+    padding: 20px;
+    border: palevioletred solid 3px;
+    box-shadow: 0px 0px 3px 3px rgb(197, 194, 194);
+    border-radius: 5px;
+    text-align: center;
   }
