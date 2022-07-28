@@ -76,7 +76,8 @@ const makeFilmDiv = (filmObj, image, title, release_date, description, divForInf
     filmDiv.addEventListener("click", () => {
         clickFilmDiv(filmObj.title, filmObj.original_title, filmObj.original_title_romanised, filmObj.movie_banner, filmObj.description, filmObj.director, filmObj.producer, filmObj.release_date, filmObj.running_time)
  
-        window.scroll(0,250)
+        window.scroll(0, 250)
+        // .then(window.location.reload())
     })
 
     filmDiv.appendChild(filmPic)
@@ -133,7 +134,11 @@ const clickFilmDiv = (title, original_title, original_title_romanised, banner, d
         filmClickRunningTime.textContent = `Running Time: ${running_time}`
         filmClickRunningTime.style = "color: black;"
 
-        clickDiv.style = "background-color: white; padding: 10px; border-radius: 5px;"
+    clickDiv.style = "background-color: white; padding: 10px; border-radius: 5px;"
+    
+    clickDiv.addEventListener("click", () => {
+        clickFilmDiv(window.location.reload())
+    })
 
         clickDiv.appendChild(filmClickBanner)
         clickDiv.appendChild(filmClickTitle)
@@ -145,6 +150,6 @@ const clickFilmDiv = (title, original_title, original_title_romanised, banner, d
         clickDiv.appendChild(filmClickReleaseDate)
         clickDiv.appendChild(filmClickRunningTime)
 
-        searchDiv.appendChild(clickDiv)
+    searchDiv.appendChild(clickDiv)
     
     }
