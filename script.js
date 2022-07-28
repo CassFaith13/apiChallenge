@@ -75,6 +75,8 @@ const makeFilmDiv = (filmObj, image, title, release_date, description, divForInf
 
     filmDiv.addEventListener("click", () => {
         clickFilmDiv(filmObj.title, filmObj.original_title, filmObj.original_title_romanised, filmObj.movie_banner, filmObj.description, filmObj.director, filmObj.producer, filmObj.release_date, filmObj.running_time)
+ 
+        window.scroll(0,250)
     })
 
     filmDiv.appendChild(filmPic)
