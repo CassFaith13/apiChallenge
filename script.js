@@ -18,7 +18,6 @@ fetch(baseURL)
     
 const getFilmResults = () => {
     const searchInput = document.getElementById("search")
-    // const dataURL = `https://ghibliapi.herokuapp.com/films/?title=${searchInput.value}`
 
 fetch(`https://ghibliapi.herokuapp.com/films/`)
     .then(res => res.json())
@@ -73,7 +72,7 @@ const makeFilmDiv = (filmObj, image, title, release_date, description, divForInf
 
     filmDescription.textContent = description
     filmDescription.style = "width: 350px"
-    // title, original_title, original_title_romanised, banner, description, director, producer, release_date, running_time, clickDivInfo
+
     filmDiv.addEventListener("click", () => {
         clickFilmDiv(filmObj.title, filmObj.original_title, filmObj.original_title_romanised, filmObj.movie_banner, filmObj.description, filmObj.director, filmObj.producer, filmObj.release_date, filmObj.running_time)
     })
@@ -86,8 +85,6 @@ const makeFilmDiv = (filmObj, image, title, release_date, description, divForInf
 
     divForInfo.appendChild(filmDiv)
 }
-
-//! My attempt:
 
 const clickFilmDiv = (title, original_title, original_title_romanised, banner, description, director, producer, release_date, running_time) => {
          
@@ -149,63 +146,3 @@ const clickFilmDiv = (title, original_title, original_title_romanised, banner, d
         searchDiv.appendChild(clickDiv)
     
     }
-
-    //! Research attempts:
-
-// var btn = document.getElementById('btn')
-
-// window.addEventListener('fetch', function (generateFilm) {
-//     console.log("fetch add event listener")
-// })
-// btn.addEventListener('click', function (generateFilm) {
-//     fetch(`https://ghibliapi.herokuapp.com/films/`)
-//         .then(data => {
-//             makeClickFilmDiv(clickResult[0].banner, clickResult[0].title, clickResult[0].original_title, clickResult[0].original_title_romanised, clickResult[0].description, clickResult[0].director, clickResult[0].producer, clickResult[0].release_date, clickResult[0].running_time, clickFilmDiv)
-//             console.log(makeClickFilmDiv)
-//         })
-
-    //!Code from Other API:
-//     const GET_FILMS = 'GET_FILMS';
-
-// const FILMS_URL = 'https://ghibliapi.herokuapp.com/films';
-
-// const initialState = [];
-
-// const getFilmsAction = (payload) => ({
-//   type: GET_FILMS,
-//   payload,
-// });
-
-// const logic = (state = initialState, action) => {
-//   switch (action.type) {
-//     case GET_FILMS:
-//       return [...action.payload];
-//     default:
-//       return state;
-//   }
-// };
-
-// logic();
-
-// const getFilmsApi = () => async (dispatch) => {
-//   const response = await fetch(FILMS_URL);
-//   const films = await response.json();
-//   const formatFilmData = films.map((e) => {
-//     const obj = {
-//       filmKey: e.id,
-//       title: e.title,
-//       originalTitle: e.original_title,
-//       romanisedTitle: e.original_title_romanised,
-//       image: e.image,
-//       banner: e.movie_banner,
-//       description: e.description,
-//       director: e.director,
-//       producer: e.producer,
-//       release: e.release_date,
-//       runningTime: e.running_time,
-//       rtScore: e.rt_score,
-//     };
-//     return obj;
-//   });
-//   dispatch(getFilmsAction(formatFilmData));
-// };
