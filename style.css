@@ -28,7 +28,11 @@ h1 {
     background-image: linear-gradient(120deg, #fbc2eb 0%, #a6c1ee 100%);
     margin: 0 0 2rem 0;
     font-size: 3rem;
-    color: white;
+    color: palevioletred;
+    text-shadow: 1px 1px black;
+    animation-name: moveheader;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
   }
 
 body {
@@ -47,11 +51,6 @@ body {
 
 .text {
     font-family: Georgia, 'Times New Roman', Times, serif;
-}
-
-h1 {
-    color: palevioletred;
-    text-shadow: 1px 1px black;
 }
 
 h2 {
@@ -154,4 +153,11 @@ form {
   
   .filmCard:nth-child(n) h3 {
     background-image: linear-gradient(120deg, #ff9a9e 0%, #fecfef 100%);
+  }
+
+  @keyframes moveheader {
+    0% {background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);}
+    25% {background-image: linear-gradient(120deg, #ffc3a0 0%, #ffafbd 100%);}
+    50% {background-image: linear-gradient(120deg, #ff9a9e 0%, #fecfef 100%);}
+    100% {background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);}
   }
