@@ -15,11 +15,10 @@
         <h1 class="text">The Best Studio Ghibli Films</h1>
         <h2 class="text">by Cassandra Faith Emery</h2>
 
-    <form>
+    <form id="searchFilm">
         <label for="" class="text">Search Films Here:</label>
         <input type="text" name="search" id="search" placeholder="Enter Film Name">
-        <input  onclick="getFilmResults()" class="button" type="button" value="SEARCH"> 
-       
+        <input onclick="getFilmResults(event)" id="button" class="button" type="submit" value="SEARCH"> 
    </form>
 
     </div>

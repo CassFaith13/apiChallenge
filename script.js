@@ -5,6 +5,12 @@ const containerDiv = document.getElementById('container')
 
 const searchDiv = document.getElementById('searchContainer')
 
+document.getElementById("search").addEventListener("keypress", (e) => {
+    if (e.key === "Enter") {
+        e.preventDefault()
+        document.getElementById("button").click()
+    }
+})
 
 fetch(baseURL)
     .then(res => res.json())
@@ -16,22 +22,32 @@ fetch(baseURL)
         });
     })  
     
-const getFilmResults = () => {
+const getFilmResults = (e) => {
+    e.preventDefault()
     const searchInput = document.getElementById("search")
 
-fetch(`https://ghibliapi.herokuapp.com/films/`)
+    fetch(`https://ghibliapi.herokuapp.com/films/`)
     .then(res => res.json())
     .then(data => {
         console.log(searchInput.value)
         const filmResult = data.filter(film => film.title.toLowerCase().includes(searchInput.value.toLowerCase()))
         console.log(filmResult)
+
+        document.getElementById("searchFilm")
+        searchInput.addEventListener("keyup", function(event) {
+        event.preventDefault();
+        if (event.key === 13) {
+        document.getElementById("enterKey").click();
+    }
+});
         
         if (filmResult.length < 2) {
-            makeFilmDiv(filmResult[0], filmResult[0].image, filmResult[0].title, filmResult[0].release_date, filmResult[0].description, searchDiv)
+            makeFilmDiv(filmResult[0], filmResult[0].image, filmResult[0].title, filmResult[0].release_date, filmResult[0].description, searchDiv)    
         } else {
             filmResult.forEach(film => {
                 makeFilmDiv(film, film.image, film.title, film.release_date, film.description, searchDiv)
             })
+
         }
     })
     .catch(err => {
@@ -152,4 +168,4 @@ const clickFilmDiv = (title, original_title, original_title_romanised, banner, d
 
     searchDiv.appendChild(clickDiv)
     
-    }
+}
