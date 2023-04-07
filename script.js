@@ -1,6 +1,6 @@
 //Studio Ghibli Films
 
-const baseURL = "https://ghibliapi.herokuapp.com/films"
+const baseURL = "https://studio-ghibli-films-api.herokuapp.com"
 const containerDiv = document.getElementById('container')
 
 const searchDiv = document.getElementById('searchContainer')
