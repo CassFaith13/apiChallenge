@@ -26,7 +26,7 @@ const getFilmResults = (e) => {
     e.preventDefault()
     const searchInput = document.getElementById("search")
 
-    fetch(`https://ghibliapi.herokuapp.com/films/`)
+    fetch(`https://studio-ghibli-films-api.herokuapp.com`)
     .then(res => res.json())
     .then(data => {
         console.log(searchInput.value)
