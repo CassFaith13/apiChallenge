@@ -1,6 +1,6 @@
 //Studio Ghibli Films
 
-const baseURL = "https://studio-ghibli-films-api.herokuapp.com" //https://ghibliapi.herokuapp.com/films
+const baseURL = "https://ghibliapi.vercel.app" //https://ghibliapi.herokuapp.com/films
 const containerDiv = document.getElementById('container')
 
 const searchDiv = document.getElementById('searchContainer')
@@ -26,7 +26,7 @@ const getFilmResults = (e) => {
     e.preventDefault()
     const searchInput = document.getElementById("search")
 
-    fetch(`https://studio-ghibli-films-api.herokuapp.com`) //https://ghibliapi.herokuapp.com/films
+    fetch(`https://ghibliapi.vercel.app`) //https://ghibliapi.herokuapp.com/films
     .then(res => res.json())
     .then(data => {
         console.log(searchInput.value)
