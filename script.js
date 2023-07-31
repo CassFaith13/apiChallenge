@@ -26,7 +26,7 @@ const getFilmResults = (e) => {
     e.preventDefault()
     const searchInput = document.getElementById("search")
 
-    fetch(`https://ghibliapi.vercel.app/films/?title=${searchInput.value}`) //https://ghibliapi.herokuapp.com/films
+    fetch(`https://ghibliapi.vercel.app/films`) //https://ghibliapi.herokuapp.com/films
     .then(res => res.json())
     .then(data => {
         console.log(searchInput.value)
